@@ -6,7 +6,7 @@
 This repository is a collection of my daily Java code snippets. Each day, I post a new Java program or code snippet to improve my coding skills and share my progress with the community.
 
 ## Table of Contents
-
+1. Java
 
 ## Usage
 
