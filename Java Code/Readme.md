@@ -10,3 +10,5 @@ Table of Contents:
   2.5. LoginTest_14.java
   2.6. Test_Letcode_Edit_Page_15.java
   2.7. Navigation_Letcode_16.java
+  2.8. Test_Amazon_SigninPage.java
+  
