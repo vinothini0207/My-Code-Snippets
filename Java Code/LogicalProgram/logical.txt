@@ -1,0 +1,514 @@
+1.
+
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+   byte a=2;
+   byte b=2;
+   int c=a+b;     // byte c=a+b  ==> incompatible types: possible lossy conversion from int to byte
+System.out.println(c);
+  }
+}
+Output:
+4
+-----------------------------------------
+2. Descending array
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+   int []a={4,3,1,6,4,3,6,4};
+   for(int i=0;i<a.length;i++){
+     for(int j=i+1;j<a.length;j++){
+        int temp=0;
+    if(a[i]<a[j]){
+         temp=a[j];
+          a[j]=a[i];
+          a[i]=temp;
+        }
+      }
+System.out.print(a[i]+" ");
+    }
+  }
+}
+Output:
+6 6 4 4 4 3 3 1
+------------------------------------------------
+3.Swapping two numbers
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter two numbers : ");
+    int number1=sc.nextInt();
+    int number2=sc.nextInt();
+    System.out.println("Before swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+    int temp=number1;
+    number1=number2;
+    number2=temp;
+    System.out.println("After swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+  }
+}
+------------
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter two numbers : ");
+    int number1=sc.nextInt();
+    int number2=sc.nextInt();
+    System.out.println("Before swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+   number1=number1+number2;
+    number2=number1-number2;
+    number1=number1-number2;
+    System.out.println("After swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+  }
+}
+--------------
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter two numbers : ");
+    int number1=sc.nextInt();
+    int number2=sc.nextInt();
+    System.out.println("Before swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+   number1=number1*number2;
+    number2=number1/number2;
+    number1=number1/number2;
+    System.out.println("After swapping : \nNumber1 : "+number1+"\nNumber2 : "+number2);
+  }
+}
+Output:
+Enter two numbers :
+23
+43
+Before swapping :
+Number1 : 23
+Number2 : 43
+After swapping :
+Number1 : 43
+Number2 : 23
+--------------------------------------------
+4.Sum of digits
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter number : ");
+    int number=sc.nextInt();
+     int sum=0,rem;
+  while(number>0){
+     rem=number%10;
+     sum=sum+rem;
+     number=number/10;
+      }
+System.out.println("Sum of digits : "+sum);
+    }
+}
+Output:
+Enter number :
+234
+Sum of digits : 9
+----------------------------------------------------
+5.Reverse String
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter string : ");
+    String string=sc.nextLine();
+String str="";
+     int len=string.length()-1;
+  for(int i=len;i>=0;i--){
+     str=str+string.charAt(i);
+      }
+System.out.println("Reverse string : "+str);
+    }
+}
+Output:
+Enter string :
+String
+Reverse string : gnirtS
+-----------------------------------------------
+6.Reverse number
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter number : ");
+    int number = sc.nextInt();
+  int rem,rev=0;
+while(number>0){
+    rem=number%10;
+     rev=(rev*10)+rem;
+    number=number/10;
+   }
+System.out.println("Reverse Number : "+rev);
+    }
+}
+Output:
+Enter number :
+234
+Reverse Number : 432
+-----------------------------------------------------------
+7. Calculator operation
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+  System.out.println(" ---------Calculator operation------------");
+  int key;
+
+ do{
+  System.out.println("Which operation do you want : \n1. Addition\n2. Subtractio\n3. Multiplication\n4. Division");
+  int operation=sc.nextInt();
+  System.out.println("Enter number1 : ");
+  double number1=sc.nextDouble();
+  System.out.println("Enter number2 : ");
+  double number2=sc.nextDouble();
+     switch(operation){
+      case 1:{
+      double add=number1+number2;
+      System.out.println("Addition : "+add);
+      break;
+        }
+      case 2:{
+       double sub=number1-number2;
+       System.out.println("Subtraction : "+sub);
+       break;
+        }
+       case 3:{
+       double mul=number1*number2;
+       System.out.println("Multiplication : "+mul);
+       break;
+       }
+      case 4:{
+      double div=number1/number2;
+      System.out.println("Division : "+div);
+      break;
+       }
+     }
+System.out.println("enter 1.Continue operation 2.exit");
+  key=sc.nextInt();
+
+   
+  }
+  while(key!=2);
+   
+  }
+}
+Output:
+ ---------Calculator operation------------
+Which operation do you want :
+1. Addition
+2. Subtractio
+3. Multiplication
+4. Division
+1
+Enter number1 :
+23
+Enter number2 :
+23
+Addition : 46.0
+enter 1.Continue operation 2.exit
+----------------------------------
+8. Prime numbers
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+int c=0;
+  for(int i=2;i<=100;i++){
+  int count=0;
+  for(int j=1;j<=i;j++){
+    if(i%j==0){
+     count++;
+       }
+    }
+   if(count==2){
+    System.out.print(i+" ");
+c++;
+}
+}
+System.out.println("\ncount of prime numbers : "+c);
+ 
+  }
+}
+Output:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+count of prime numbers : 25
+---------------------------------------------------------------
+9.Palindrome String
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+System.out.println("Enter string: ");
+  String string=sc.nextLine();
+  String str="";
+  int len=string.length();
+   for(int i=len-1;i>=0;i--){
+      str=str+string.charAt(i);
+    }  
+if(str.equals(string)){
+   System.out.println(string +" is palindrome");
+   }
+else{
+ System.out.println(string+" is not palindrome");
+}
+  }
+}
+Output:
+Enter string:
+amma
+amma is palindrome
+----------------------------------------------------
+10. Palindrome number
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+System.out.println("Enter number: ");
+  int number=sc.nextInt();
+  int temp=number;
+int rem,rev=0;
+  while(temp>0){
+  rem=temp%10;
+   rev=(rev*10)+rem;
+   temp=temp/10;
+}
+if(number==rev){
+   System.out.println(number +" is palindrome");
+   }
+else{
+ System.out.println(number+" is not palindrome");
+}
+  }
+}
+Output:
+Enter number:
+121
+121 is palindrome
+----------------------------------------------------------
+11. Odd or Even
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+System.out.println("Enter number: ");
+  int number=sc.nextInt();
+  if(number%2==0){
+  System.out.println(number +" is even");
+   }
+else{
+ System.out.println(number+" is odd");
+}
+  }
+}
+Output:
+Enter number:
+24
+24 is even
+-------------------------------------------------------------
+12. Leap year or not
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+int count=0;
+  for(int year=2000;year<=3000;year++){
+  
+    if((year%4==0 && year%100 !=0 )|| year%400==0){
+     System.out.print(year +" ");
+count++;
+    }
+}
+System.out.println("\n1000 t0 3000 leap year count : "+count);
+  }
+}
+Output:
+2000 2004 2008 2012 2016 2020 2024 2028 2032 2036 2040 2044 2048 2052 2056 2060 2064 2068 2072 2076 2080 2084 2088 2092 2096 2104 2108 2112 2116 2120 2124 2128 2132 2136 2140 2144 2148 2152 2156 2160 2164 2168 2172 2176 2180 2184 2188 2192 2196 2204 2208 2212 2216 2220 2224 2228 2232 2236 2240 2244 2248 2252 2256 2260 2264 2268 2272 2276 2280 2284 2288 2292 2296 2304 2308 2312 2316 2320 2324 2328 2332 2336 2340 2344 2348 2352 2356 2360 2364 2368 2372 2376 2380 2384 2388 2392 2396 2400 2404 2408 2412 2416 2420 2424 2428 2432 2436 2440 2444 2448 2452 2456 2460 2464 2468 2472 2476 2480 2484 2488 2492 2496 2504 2508 2512 2516 2520 2524 2528 2532 2536 2540 2544 2548 2552 2556 2560 2564 2568 2572 2576 2580 2584 2588 2592 2596 2604 2608 2612 2616 2620 2624 2628 2632 2636 2640 2644 2648 2652 2656 2660 2664 2668 2672 2676 2680 2684 2688 2692 2696 2704 2708 2712 2716 2720 2724 2728 2732 2736 2740 2744 2748 2752 2756 2760 2764 2768 2772 2776 2780 2784 2788 2792 2796 2800 2804 2808 2812 2816 2820 2824 2828 2832 2836 2840 2844 2848 2852 2856 2860 2864 2868 2872 2876 2880 2884 2888 2892 2896 2904 2908 2912 2916 2920 2924 2928 2932 2936 2940 2944 2948 2952 2956 2960 2964 2968 2972 2976 2980 2984 2988 2992 2996
+1000 t0 3000 leap year count : 2
+-------------------------------------------------------
+13. LCM
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+  int number1=sc.nextInt();
+  int number2=sc.nextInt();
+  int lcm=(number1>number2)? number1:number2;
+  while(true){
+    if(lcm%number1==0 && lcm%number2==0){
+        System.out.println("LCM :"+lcm); 
+        break;    
+    }
+lcm++;
+}
+ }
+}
+Output:
+20
+16
+LCM :80
+------------------------------------------------------------
+14. HCF
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+  int number1=sc.nextInt();
+  int number2=sc.nextInt();
+  int hcf=(number1<number2)? number1:number2;
+  while(true){
+    if(number1%hcf==0 && number2%hcf==0){
+        System.out.println("HCF :"+hcf); 
+        break;    
+    }
+hcf--;
+}
+ }
+}
+Output:
+20
+16
+HCF :4
+-------------------------------------------------------------
+15. Greates three numbers
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+System.out.println("Enter 3 numbers: ");
+  int number1=sc.nextInt();
+  int number2=sc.nextInt();
+  int number3=sc.nextInt();
+  if(number1>number2 && number1>number3){
+    System.out.println(number1 +" is greatest number");
+}
+ else if(number2>number1 && number2>number3){
+  System.out.println(number2 +" is greatest number");
+}
+else{
+  System.out.println(number3 +" is greatest number");
+}
+  }
+}
+Output:
+Enter 3 numbers:
+13
+34
+54
+54 is greatest number
+------------------------------------------------------------
+16. Fibonacci series
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter limit : ");
+int n= sc.nextInt();
+  
+int n1=0;
+  int n2=1;
+System.out.print(n1+" "+n2);
+int sum=0;
+  for(int i=2;i<n;i++){
+    sum=n1+n2;
+   System.out.print(" "+sum);
+  n1=n2;
+  n2=sum;
+    }
+  }
+}
+Output:
+Enter limit :
+10
+0 1 1 2 3 5 8 13 21 34
+--------------------------------------------------------------
+17. Factors
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter number : ");
+int n= sc.nextInt();
+  for(int i=1;i<n;i++){
+    if(n%i==0)
+  System.out.print(i+" ");
+    }
+  }
+}
+Output:
+Enter number :
+100
+1 2 4 5 10 20 25 50
+-----------------------------------------------------------
+18. Factorial number
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter number : ");
+int n= sc.nextInt();
+int fact=1;
+  for(int i=1;i<=n;i++){
+    fact=fact*i;
+    }
+System.out.println("Factorial : "+fact);
+  }
+}
+Output:
+Enter number :
+7
+Factorial : 5040
+------------------------------------------------------------
+19. Concatenate string
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter string1 : ");
+String str1= sc.nextLine();
+System.out.println("Enter string2 : ");
+String str2= sc.nextLine();
+String str3=str1+" "+str2;
+System.out.println("Add string : "+str3);
+System.out.println("Concat method : "+str1.concat(str2));
+  }
+}
+Output:
+Enter string1 :
+vino
+Enter string2 :
+sathish
+Add string : vino sathish
+Concat method : vinosathish
+-----------------------------------------------------------
+20.Armstrong numbers
+import java.util.*;
+public class Hello{
+  public static void main(String[] args){
+   int rem,rev=0,temp,digits=0;
+   for(int i=1;i<1000;i++){
+digits=0;
+temp=i;
+while(temp>0){
+ digits++;
+temp=temp/10;
+}
+     temp=i; 
+    rev=0;
+   while(temp>0){
+     rem=temp%10;
+     rev+=Math.pow(rem,digits);
+     temp=temp/10;
+    }
+if(i==rev){
+System.out.print(i+" ");
+}
+  }
+ }
+}
+Output:
+1 2 3 4 5 6 7 8 9 153 370 371 407
+-------------------------------------
+21.
