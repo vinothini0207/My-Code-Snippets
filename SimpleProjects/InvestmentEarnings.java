@@ -22,9 +22,10 @@ public class InvestmentEarnings {
         else{
             System.out.println("After day "+day+ ". you have "+"no earnings per share.");
         }
+       day=day+1;
 
     }
-
+scan.close();
    } 
    
 }
